@@ -1,3 +1,241 @@
 body {
     background-color: aqua;
 }
+
+.list-container {
+    margin: 20px;
+}
+
+.hidden-list {
+    display: none; /* Скрываем список по умолчанию */
+    list-style-type: none;
+    padding: 0;
+}
+
+.hidden-list li {
+    margin: 5px 0;
+}
+
+.toggle-btn {
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.toggle-btn:hover {
+    background-color: #0056b3;
+}
+
+.hidden-list {
+    display: none;
+}
+
+ul {
+    position: relative;
+}
+
+li::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.room-details {
+  display: none; /* Изначально скрыть детали комнаты */
+  margin-top: 10px;
+}
+.toggle-btn {
+  cursor: pointer; /* Указатель для кнопки */
+  background: #2980B9;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+body {
+  font-family: 'Lato', Helvetica, Arial;
+  font-size: 16px;
+  line-height: 1.6;
+  background-color: #f4f4f4; /* Светлый фон для всей страницы */
+}
+
+h1 {
+  font-family: 'Pacifico', cursive; /* Использование шрифта Pacifico для заголовков */
+  font-size: 54px; /* Размер заголовка */
+  color: #2980B9; /* Цвет заголовка */
+  margin-bottom: 10px; /* Отступ снизу */
+}
+
+p {
+  font-size: 16px; /* Размер текста в параграфах */
+  color: #555; /* Цвет текста в параграфах */
+  margin: 5px 0; /* Отступы сверху и снизу */
+}
+
+.container {
+  display: flex; /* Используем flexbox */
+  flex-direction: column; /* Выравнивание по колонкам */
+  align-items: center; /* Центрирование по горизонтали */
+  justify-content: center; /* Центрирование по вертикали, если необходимо */
+  height: 100vh; /* Высота контейнера равна высоте экрана */
+  width: 100%; /* Ширина контейнера */
+}
+
+.toggle-btn {
+  margin: 15px; /* Отступы вокруг кнопок */
+  padding: 15px 20px; /* Внутренний отступ кнопки */
+  background: #2980B9; /* Цвет кнопки */
+  color: white; /* Цвет текста кнопки */
+  border: none; /* Убираем рамку */
+  border-radius: 5px; /* Скругленные углы */
+  cursor: pointer; /* Курсор указатель */
+  transition: background 0.3s; /* Плавный переход для фона */
+}
+
+.toggle-btn:hover {
+  background: #3498db; /* Цвет кнопки при наведении */
+}
+
+.room-details {
+  display: none; /* Скрыть детали комнаты по умолчанию */
+  margin-top: 10px; /* Отступ сверху для деталей */
+  border-top: 1px solid #ddd; /* Граница сверху */
+  padding-top: 10px; /* Отступ сверху */
+}
+
+@import url(https://fonts.googleapis.com/css?family=Rubik+One&subset=latin,cyrillic);
+.gradient-text {
+  font-family: 'Rubik One', sans-serif;
+  font-size: 30px;
+  text-transform: uppercase;
+  background: linear-gradient(45deg, #0B2349 33%, #0D61BC 66%, #8AA9D6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: table;
+  margin: 20px auto;
+}
+
+/* Tutorial on https://fossheim.io/writing/posts/css-text-gradient. */
+
+.gradient-text {
+  /* Fallback: Set a background color. */
+  background-color: #CA4246;
+  
+  /* Create the gradient. */
+  background-image: linear-gradient(
+        45deg,
+        #CA4246 16.666%, 
+        #E16541 16.666%, 
+        #E16541 33.333%, 
+        #F18F43 33.333%, 
+        #F18F43 50%, 
+        #8B9862 50%, 
+        #8B9862 66.666%, 
+        #476098 66.666%, 
+        #476098 83.333%, 
+        #A7489B 83.333%);
+  
+  /* Set the background size and repeat properties. */
+  background-size: 150%;
+  background-repeat: repeat;
+
+  /* Use the text as a mask for the background. */
+  /* This will show the gradient as a text color rather than element bg. */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  
+  /* Animate the text when loading the element. */
+    /* This animates it on page load and when hovering out. */
+    animation: rainbow-text-simple-animation-rev 0.75s ease forwards;
+
+}
+
+.gradient-text:hover{
+    animation: rainbow-text-simple-animation 0.5s ease-in forwards;
+}
+
+
+/* Move the background and make it smaller. */
+/* Animation shown when entering the page and after the hover animation. */
+
+.button-red {
+  background-color: #004A7F;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  border: none;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Arial;
+  font-size: 20px;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  -webkit-animation: glowing 1500ms infinite;
+  -moz-animation: glowing 1500ms infinite;
+  -o-animation: glowing 1500ms infinite;
+  animation: glowing 1500ms infinite;
+}
+@-webkit-keyframes glowing {
+  0% { background-color: #0047b2; -webkit-box-shadow: 0 0 3px #0300b2; }
+  50% { background-color: #0077ff; -webkit-box-shadow: 0 0 40px #006eff; }
+  100% { background-color: #2400b2; -webkit-box-shadow: 0 0 3px #3b00b2; }
+}
+
+@-moz-keyframes glowing {
+  0% { background-color: #1e00b2; -moz-box-shadow: 0 0 3px #3200b2; }
+  50% { background-color: #1100ff; -moz-box-shadow: 0 0 40px #005eff; }
+  100% { background-color: #1500b2; -moz-box-shadow: 0 0 3px #0009b2; }
+}
+
+@-o-keyframes glowing {
+  0% { background-color: #1e00b2; box-shadow: 0 0 3px #0003b2; }
+  50% { background-color: #0066ff; box-shadow: 0 0 40px #0051ff; }
+  100% { background-color: #1e00b2; box-shadow: 0 0 3px #1800b2; }
+}
+
+@keyframes glowing {
+  0% { background-color: #0900b2; box-shadow: 0 0 3px #0900b2; }
+  50% { background-color: #0066ff; box-shadow: 0 0 40px #007bff; }
+  100% { background-color: #1800b2; box-shadow: 0 0 3px #0003b2; }
+}
+
+
+/* Style the rest of the page. */
+body { font: 400 1em/1.5 "Neuton"; background: #090d00; color: rgba(255,255,255,.25); text-align: center; margin: 0 }
+
+header {
+  margin-top: 1em;
+  margin-top: calc(50vh - 3em);
+}
+
+h1 {
+  font-family: "Archivo Black", sans-serif;
+  font-weight: normal;
+  font-size: 4em;
+  text-align: center;
+  margin-bottom: 0;
+  margin-bottom: -0.25em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+  width: 805px;
+}
+
+.erik {
+  background: -webkit-linear-gradient(top, rgba(183,222,237,1) 0%,rgba(113,206,239,1) 50%,rgba(33,180,226,1) 51%,rgba(183,222,237,1) 100%);
+}
+
+.royall {
+  background: -webkit-linear-gradient(top, rgba(243,197,189,1) 0%,rgba(232,108,87,1) 50%,rgba(234,40,3,1) 51%,rgba(255,102,0,1) 75%,rgba(199,34,0,1) 100%);
+}
+
+.erik, .royall {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px #000000; /* Толщина и цвет обводки */
+}

@@ -1,11 +1,38 @@
 {% extends 'base.html' %}
 {% block content %}
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
 {% for room in rooms %}
-<div class="p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">
-    <h1>Room #{{ room.number }}</h1>
-    <h2>Capacity: {{room.capacity}}</h2>
-    <p>Location: {{room.location}}</p>
+<div class="list-container">
+    <div class="toggle-btn">
+        <button class="button-red">Room #{{ room.number }}</button>
+    </div>
+    <div class="room-details">
+        <h2 class="gradient-text">Capacity: {{ room.capacity }}</h2>
+        <h2 class="gradient-text">Location: {{ room.location }}</h2>
+    </div>
 </div>
 {% endfor %}
+<script>
+    // JavaScript для обработки нажатия кнопки
+    document.querySelectorAll('.toggle-btn').forEach(button => {
+        button.addEventListener('click', () => {
+            const details = button.nextElementSibling; // Получаем следующий элемент (room-details)
+            if (details.style.display === 'none' || details.style.display === '') {
+                details.style.display = 'block'; // Развернуть
+            } else {
+                details.style.display = 'none'; // Свернуть
+            }
+        });
+    });
+</script>
+
+
+
 {% endblock %}
