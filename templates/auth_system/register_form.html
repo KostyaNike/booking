@@ -1,8 +1,76 @@
 {% extends 'base.html' %}
 {% block content %}
-<form action="{% url 'register' %}" method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Register</button>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'register.css' %}">
+</head>
+
+<body>
+<div class="container">
+    <div class="row">
+    <div class="col-lg-10 col-xl-9 mx-auto">
+        <div class="card card-signin flex-row my-5">
+        <div class="card-img-left d-none d-md-flex">
+            <!-- Background image for card set in CSS! -->
+        </div>
+        <div class="card-body">
+            <h5 class="card-title text-center">Register</h5>
+            <form action="{% url 'register' %}" method="post">
+            {% csrf_token %}
+            <div class="form-label-group">
+                <input type="text" id="inputUsername" name="username" class="form-control" placeholder="Username" required autofocus>
+                <label for="inputUsername">Username</label>
+                {% if form.username.errors %}
+                    <div class="text-danger">
+                        {{ form.username.errors }}
+                    </div>
+                {% endif %}
+            </div>
+
+            <div class="form-label-group">
+                <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email address" required>
+                <label for="inputEmail">Email address</label>
+                {% if form.email.errors %}
+                    <div class="text-danger">
+                        {{ form.email.errors }}
+                    </div>
+                {% endif %}
+            </div>
+            
+            <hr>
+
+            <div class="form-label-group">
+                <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
+                <label for="inputPassword">Password</label>
+                {% if form.password.errors %}
+                    <div class="text-danger">
+                        {{ form.password.errors }}
+                    </div>
+                {% endif %}
+            </div>
+            
+            <div class="form-label-group">
+                <input type="password" id="inputConfirmPassword" name="confirm_password" class="form-control" placeholder="Confirm password" required>
+                <label for="inputConfirmPassword">Confirm password</label>
+                {% if form.confirm_password.errors %}
+                    <div class="text-danger">
+                        {{ form.confirm_password.errors }}
+                    </div>
+                {% endif %}
+            </div>
+
+            <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Register</button>
+            <hr class="my-4">
+            <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fab fa-google mr-2"></i> Sign up with Google</button>
+            <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i class="fab fa-facebook-f mr-2"></i> Sign up with Facebook</button>
+            </form>
+        </div>
+        </div>
+    </div>
+    </div>
+</div>
+</body>
 {% endblock %}
